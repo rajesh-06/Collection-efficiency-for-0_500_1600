@@ -1,0 +1,20 @@
+FINISH  
+/CLEAR,START
+/PREP7  
+! No polynomial elements
+!/PMETH,OFF,1
+
+! Set electric preferences
+KEYW,PR_ELMAG,1
+KEYW,MAGELC,1   
+
+! Select element
+ET,1,SOLID123
+
+*DO, i, 1,4,1
+BLOCK, i, i*i+1, i, 1+i*i, i, i*i+1
+
+VSEL, all
+vplots
+
+*ENDDO
